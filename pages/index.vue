@@ -1,5 +1,7 @@
 <template>
-  <Tutorial/>
+  <div>
+    <h1>Welcome to conry dad jokes app</h1>
+  </div>
 </template>
 
 <script>
