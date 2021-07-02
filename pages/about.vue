@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-4xl md:text-5xl font-bold mb-3 md:mb-5">About dad jokes</h1>
+    <h1 class="text-3xl md:text-4xl font-bold mb-3 md:mb-5">About dad jokes</h1>
     <p>This is an app that displays conry dad jokes</p>
   </div>
 </template>
