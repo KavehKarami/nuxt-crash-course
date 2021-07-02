@@ -11,6 +11,19 @@ import axios from "axios";
 export default {
   name: "Jokes",
 
+  async asyncData({$axios}) {
+    const config = {
+      headers: {
+        Accept: "application/json"
+      }
+    }
+
+    const data = await $axios.$get("https://icanhazdadjoke.com/search",config);
+    const jokes = data.results;
+
+    return {jokes}
+  },
+
   data() {
     return {
       jokes: []
@@ -27,21 +40,6 @@ export default {
           content: "best place for corny dad jokes"
         }
       ]
-    }
-  },
-
-  async mounted () {
-    const config = {
-      headers: {
-        Accept: "application/json"
-      }
-    }
-
-    try {
-      const res = await axios.get("https://icanhazdadjoke.com/search", config);
-      this.jokes = res.data.results;
-    } catch (err) {
-      throw new Error(err)
     }
   },
 
@@ -63,7 +61,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
